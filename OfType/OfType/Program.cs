@@ -6,7 +6,7 @@
         {
             
             MamaType mama = new MamaType();
-            IEnumerable<string> res = mama.GetOfType<object, string>(new object[] { "dasdsa", 4, "dsasdas" });
+            IEnumerable<string> res = mama.GetOfType<string>(new object[] { "dasdsa", 4, "dsasdas" });
             Console.WriteLine(res.Count());
             foreach (string s in res)
             {
