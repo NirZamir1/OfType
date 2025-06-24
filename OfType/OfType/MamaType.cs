@@ -24,15 +24,7 @@ namespace OfType
 
         public IEnumerable<TOutput> GetOfType<TSource, TOutput>(IEnumerable<TSource> enumerable)
         {
-            List<TOutput> list = new List<TOutput>();
-            foreach (TSource item in enumerable)
-            {
-                if (item is TOutput output)
-                {
-                    list.Add(output);
-                }
-            }
-            return list;
+            return GetOfType<TOutput>(enumerable);
         }
 
         public IEnumerable<TBase> OfBase<TBase, TDerived>(IEnumerable<TDerived> derivedItems) where TDerived : TBase
@@ -40,8 +32,7 @@ namespace OfType
             List<TBase> list = new List<TBase>();
             foreach (var derivedItem in derivedItems)
             {
-                if (derivedItem is TBase derivedDerived)
-                    list.Add(derivedItem);
+                list.Add(derivedItem);
             }
             return list;
         }
